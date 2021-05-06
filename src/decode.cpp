@@ -24,10 +24,20 @@ int Decode::decode(const std::vector<uint8_t> &data, std::vector<uint8_t> &outda
     case IE::Message_type::Value::Registration_accept:
     {
         Registration_accept regaccp;
+        uint8_t val = static_cast<uint8_t> (Nas::decodeProtocolDiscriminator(data));
+        outdata.push_back(val); 
         size = regaccp.decode(data,outdata);
-       // onRegistrationAccept(regaccp);
         break;
     }
+    break;
+   case IE::Message_type::Value::Authentication_response:
+    {
+        Authentication_response Authobj;
+        uint8_t val = static_cast<uint8_t> (Nas::decodeProtocolDiscriminator(data));
+        outdata.push_back(val); 
+        size = Authobj.decode(data,outdata);
+        break;
+    }    
     break;
     default:
         throw NasCodecException(std::string("Not implemented: ") + IE::Message_type::value_to_string(message_type));

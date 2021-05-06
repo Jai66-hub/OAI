@@ -1,0 +1,3 @@
+/home/oai/oai-libnascodec-cpp/example/_5GS/CMakeFiles/rebuild_cache.dir
+/home/oai/oai-libnascodec-cpp/example/_5GS/CMakeFiles/edit_cache.dir
+/home/oai/oai-libnascodec-cpp/example/_5GS/CMakeFiles/runTests.dir

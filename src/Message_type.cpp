@@ -8,7 +8,6 @@ namespace IE
 
 Message_type::Message_type(const Value value)
 {
-    std::cout<<"In message type const"<<std::endl;
     set(value);
 }
 
@@ -19,7 +18,6 @@ std::string Message_type::getName() const
 
 void Message_type::set(Message_type::Value value)
 {
-    std::cout<<"In message type set"<<std::endl;
     m_present = true;
     m_value = value;
 }
@@ -33,7 +31,6 @@ Message_type::Value Message_type::get() const
 int Message_type::code_V(std::vector<uint8_t> &data) const
 {
     raise_exception_if_not_present(className(this));
-    std::cout<<"In message type code_v"<<std::endl;
     data.push_back(static_cast<uint8_t>(m_value));
     return 1;
 }

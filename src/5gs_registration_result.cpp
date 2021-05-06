@@ -76,6 +76,15 @@ int _5GS_registration_result::decode(const std::vector<uint8_t> &data,std::vecto
 
     int size = 0 , outsize =0;
     int locdata = 0;
+
+    std::cout<<"data size :"<<data.size()<<std::endl;
+
+    if(data.size() <= 0)
+    {
+        std::cout<<"No data available"<<std::endl;
+        return -1;
+    }
+
     size = decode_LV(data);
     outsize = out_data.size();
         
@@ -93,6 +102,8 @@ int _5GS_registration_result::decode(const std::vector<uint8_t> &data,std::vecto
 int _5GS_registration_result::decode_LV(const std::vector<uint8_t> &data)
 {
     int size = 0;
+
+    std::cout<<"data size 1:"<<data.size()<<std::endl;
     // skip length
     m_value = (data[1] & 0x7);
     m_SMS_value = ((data[1] >> 3) & 0x1);

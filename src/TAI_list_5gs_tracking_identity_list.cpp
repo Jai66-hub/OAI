@@ -10,7 +10,6 @@ namespace IE
 
 TAI_list_5gs_tracking_identity::TAI_list_5gs_tracking_identity(IE::partial_tracking_area_identity::PTAI_list value) : m_chk(value)
 {
-    std::cout<<"In TAI construnctor "<<std::endl;
      m_present = true;
 }
 
@@ -19,7 +18,11 @@ int TAI_list_5gs_tracking_identity::code_TLV(std::vector<uint8_t> &data,const ui
     raise_exception_if_not_present(className(this));
     int size = 0;
 
-    std::cout<<"In TAI code TLV"<<std::endl;
+    if(iei <=0 )
+    {
+        std::cout<<"Iei should not be zero"<<std::endl;
+        return -1;
+    }
 
     data.push_back(static_cast<uint8_t>(iei));
     size += 1;
@@ -37,6 +40,12 @@ int TAI_list_5gs_tracking_identity::decode_TLV(const std::vector<uint8_t> &data,
 {
     int size = 0;
     std::vector<uint8_t> tmp = data;
+
+    if(data.size() <= 0)
+    {
+        std::cout<<"No data available"<<std::endl;
+        return -1;
+    }
 
    // IEI value 
     out_data.push_back(data[0]);

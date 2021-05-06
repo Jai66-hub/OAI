@@ -37,6 +37,13 @@ int Spare_half_Octet::code_V(std::vector<uint8_t> &data) const
 
 int Spare_half_Octet::decode_V(const std::vector<uint8_t> &data)
 {
+
+    if(data.size() < 3)
+    {
+        std::cout<<"No spare half octet data present"<<std::endl;
+        return -1; // error 
+    }
+
     return decode_V(data[2]);
 }
 

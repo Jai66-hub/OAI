@@ -22,6 +22,13 @@ int Nas::codeSparehalfoctet(std::vector<uint8_t> &data,const Nas::Sparehalfoctet
 // No exception, sends reserved when unknown
 Nas::ProtocolDiscriminator Nas::decodeProtocolDiscriminator(const std::vector<uint8_t> &data)
 {
+
+    if(data.size() <= 0)
+    {
+        std::cout<<"There is not data present"<<std::endl;
+        return Nas::ProtocolDiscriminator::reserved;
+    }
+
     try
     {
         return Nas::uint8_t_to_ProtocolDiscriminator(data[0]);

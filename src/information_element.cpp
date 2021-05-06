@@ -11,9 +11,6 @@ bool InformationElement::isSet() const
 int InformationElement::code(std::vector<uint8_t> &data, const InformationElement::Format format, const uint8_t iei) const
 {
 
-    
-    std::cout<<"In information element code "<<std::endl;
-
     if (iei == 0)
     {
         raise_exception_for_format_with_T(format);

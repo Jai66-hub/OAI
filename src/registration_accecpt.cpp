@@ -27,26 +27,18 @@ int Registration_accept::code(std::vector<uint8_t> &data) const
 {
     int size = 0;
 
-    std::cout<<"In the fuction registration acceot code \n"<<std::endl;
     try
     {
         /* setting the Extended protocol descriminiation as 5gs_mobility management messages */
         size += Nas::codeProtocolDiscriminator(data, Nas::ProtocolDiscriminator::_5GS_mobility_management_messages);
-        std::cout<<"codeProtocolDiscriminator "<<std::endl;
-
         // Adding the mandatory parameters header 
         size += codeMMHeader(data);
-        std::cout<<"codeMMHeadere and data : "<<data[3]<<std::endl;
 
         std::cout<<data<<std::endl;
         // Adding the required IE's 
         size += m_5gs_registrtn_result.code(data, InformationElement::Format::LV);
-        std::cout<<"m_5gs_registrtn_result \n"<<std::endl;
         size += m_TAI_list_identity.code(data, InformationElement::Format::TLV, static_cast<uint8_t>(Iei::TAI_list));
-        std::cout<<"TAI list \n"<<std::endl;
         // add optional parameters
-        std::cout<<"Size : "<<size<<std::endl;
-
     }
     catch (const std::exception &exception)
     {
@@ -81,12 +73,10 @@ int Registration_accept::decode(const std::vector<uint8_t> &data, std::vector<ui
 std::string Registration_accept::to_string() const
 {
     std::string str;
-    std::cout<<"in reg accep string "<<std::endl;
     str = "Registration_accept";
     str += "(";
     // Header
     str += header_to_string();
-    std::cout<<"header_to_string "<<std::endl;
     // Mandatory parameters
     str += ", " + m_5gs_registrtn_result.to_string();
     str += ", " + m_TAI_list_identity.to_string();

@@ -4,6 +4,7 @@
 #include <_5GS/pdu_5gs.h>
 #include <_5GS/PDU_session_establishment_request.h>
 #include <_5GS/registration_accecpt.h>
+#include <_5GS/Authentication_response.h>
 
 namespace _5GS
 {

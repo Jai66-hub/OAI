@@ -37,6 +37,12 @@ int Security_header_type::code_V(std::vector<uint8_t> &data) const
 
 int Security_header_type::decode_V(const std::vector<uint8_t> &data)
 {
+    if(data.size() < 2)
+    {
+        std::cout<<"No security header data present"<<std::endl;
+        return -1; // error 
+    }
+
     return decode_V(data[1]);
 }
 

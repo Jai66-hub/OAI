@@ -41,6 +41,14 @@ int _5Gs_moblity_manage::decode(const std::vector<uint8_t> &data, std::vector<ui
        // TODO security header
        int offset = 1;
        int size = offset;
+
+
+       if(data.size() <= 0)
+       {
+              std::cout<<"There is no data present "<<std::endl;
+              return -1;
+       }
+
        // XXX tmp: copy for easier writing or slice for performance ?
        std::vector<uint8_t> tmp = data;
        

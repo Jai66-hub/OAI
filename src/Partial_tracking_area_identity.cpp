@@ -8,7 +8,6 @@ namespace IE
 
 partial_tracking_area_identity::partial_tracking_area_identity(PTAI_list TAIvalue)
 {
-    std::cout<<"In partial construnctor "<<std::endl;
     m_present = true;
     set(TAIvalue);
 }
@@ -34,9 +33,6 @@ int partial_tracking_area_identity::code_V(std::vector<uint8_t> &data) const
     raise_exception_if_not_present(className(this));
 
     int size = 0 ;
-
-    std::cout<<"In partial area code v"<<std::endl;
-
     /* adding up the IE to the element */
 
     data.push_back(static_cast<uint8_t>(((m_PTAIvalue.m_typeoflist & 0x3 ) << 5) | (m_PTAIvalue.m_noofelements & 0x1F)));
@@ -104,10 +100,7 @@ int partial_tracking_area_identity::code_V(std::vector<uint8_t> &data) const
             std::cout<<"invalid type value"<<std::endl;
         break;
 
-    }  
-
-    std::cout<<"size "<<size<<std::endl;
-    
+    }      
 
     return size;
 }
@@ -117,6 +110,12 @@ int partial_tracking_area_identity::decode(const std::vector<uint8_t> &data,std:
 {
     int size = 0 ;
     int locdata = 0;
+
+    if(data.size() <= 0)
+    {
+        std::cout<<"No data is present"<<std::endl;
+        return -1;
+    }
 
     m_PTAIvalue.m_typeoflist = ((data[size] >> 5 ) & 0x3 );
     m_PTAIvalue.m_noofelements = ((data[size]) & 0x1F);
