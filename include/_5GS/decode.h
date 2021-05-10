@@ -5,6 +5,11 @@
 #include <_5GS/PDU_session_establishment_request.h>
 #include <_5GS/registration_accecpt.h>
 #include <_5GS/Authentication_response.h>
+#include <_5GS/identitiy_response.h>
+#include <_5GS/Authentication_failure.h>
+#include <_5GS/Authentication_reject.h>
+#include <_5GS/deregistration_accept_UE_origin.h>
+#include <_5GS/deregistration_accept_UE_term.h>
 
 namespace _5GS
 {

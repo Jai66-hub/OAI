@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/runTests.dir/Auth_response_code_decode.cpp.o"
+  "CMakeFiles/runTests.dir/identity_response_code_decode.cpp.o"
   "runTests"
   "runTests.pdb"
 )

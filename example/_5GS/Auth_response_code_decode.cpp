@@ -71,38 +71,22 @@ TEST_F(Auth_resp_gtest, test_regaccpt1)
 
 }
 
-#if 0
 TEST_F(Auth_resp_gtest, test_regaccpt2)
 {
 
-  TAIvalue.m_PTAIvalue.m_typeoflist  = 2;
-  TAIvalue.m_PTAIvalue.m_noofelements = 2;
-  TAIvalue.m_PTAIvalue.m_MCC1_MCC2[0] = 2;
-  TAIvalue.m_PTAIvalue.m_MCC3_MNC3[0] = 3;
-  TAIvalue.m_PTAIvalue.m_MNC1_MNC2[0] = 4;
-  TAIvalue.m_PTAIvalue.TAC[0][0]      = 6;
-  TAIvalue.m_PTAIvalue.TAC[0][1]      = 7;
-  TAIvalue.m_PTAIvalue.TAC[0][2]      = 8;  
+  AuthparamObj.m_lvalue.m_u8length = 4;
+    AuthparamObj.m_lvalue.m_u8Response[0] = 5;
+    AuthparamObj.m_lvalue.m_u8Response[1] = 6;
+    AuthparamObj.m_lvalue.m_u8Response[2] = 7;
+    AuthparamObj.m_lvalue.m_u8Response[3] = 8;
+ 
 
  // for code
-    EXPECT_NE(15,retsize(TAIvalue));     
+    EXPECT_NE(15,retsize(AuthparamObj));     
 
 }
 
 /* For security type decode */
-
-TEST_F(Auth_resp_gtest, testdecodesht_crct)
-{     
-    // for decode
-    EXPECT_EQ(1,SHTobject.decode_V(temp1));        
-}
-
-
-TEST_F(Auth_resp_gtest, testdecodesht_wrong)
-{
-  //for decode   
-   EXPECT_NE(2,SHTobject.decode_V(temp1));
-}
 
 
 TEST_F(Auth_resp_gtest, testdecodesht_valid)
@@ -128,9 +112,6 @@ TEST_F(Auth_resp_gtest, testdecodesho_wrong)
 }
 
 /*  end ******/
-
-#endif
-
 
 
 int main(int argc, char **argv)

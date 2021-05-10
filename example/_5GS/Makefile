@@ -123,32 +123,32 @@ runTests/fast:
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
 .PHONY : runTests/fast
 
-Auth_response_code_decode.o: Auth_response_code_decode.cpp.o
+identity_response_code_decode.o: identity_response_code_decode.cpp.o
 
-.PHONY : Auth_response_code_decode.o
+.PHONY : identity_response_code_decode.o
 
 # target to build an object file
-Auth_response_code_decode.cpp.o:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/Auth_response_code_decode.cpp.o
-.PHONY : Auth_response_code_decode.cpp.o
+identity_response_code_decode.cpp.o:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/identity_response_code_decode.cpp.o
+.PHONY : identity_response_code_decode.cpp.o
 
-Auth_response_code_decode.i: Auth_response_code_decode.cpp.i
+identity_response_code_decode.i: identity_response_code_decode.cpp.i
 
-.PHONY : Auth_response_code_decode.i
+.PHONY : identity_response_code_decode.i
 
 # target to preprocess a source file
-Auth_response_code_decode.cpp.i:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/Auth_response_code_decode.cpp.i
-.PHONY : Auth_response_code_decode.cpp.i
+identity_response_code_decode.cpp.i:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/identity_response_code_decode.cpp.i
+.PHONY : identity_response_code_decode.cpp.i
 
-Auth_response_code_decode.s: Auth_response_code_decode.cpp.s
+identity_response_code_decode.s: identity_response_code_decode.cpp.s
 
-.PHONY : Auth_response_code_decode.s
+.PHONY : identity_response_code_decode.s
 
 # target to generate assembly for a file
-Auth_response_code_decode.cpp.s:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/Auth_response_code_decode.cpp.s
-.PHONY : Auth_response_code_decode.cpp.s
+identity_response_code_decode.cpp.s:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/identity_response_code_decode.cpp.s
+.PHONY : identity_response_code_decode.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... runTests"
-	@echo "... Auth_response_code_decode.o"
-	@echo "... Auth_response_code_decode.i"
-	@echo "... Auth_response_code_decode.s"
+	@echo "... identity_response_code_decode.o"
+	@echo "... identity_response_code_decode.i"
+	@echo "... identity_response_code_decode.s"
 .PHONY : help
 
 

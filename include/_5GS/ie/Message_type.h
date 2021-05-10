@@ -38,6 +38,7 @@ public:
         Configuration_update_complete,
         Authentication_request,
         Authentication_response,
+        Authentication_reject,
         Authentication_failure,
         Authentication_result,
         Identity_request,

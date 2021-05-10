@@ -39,6 +39,51 @@ int Decode::decode(const std::vector<uint8_t> &data, std::vector<uint8_t> &outda
         break;
     }    
     break;
+   case IE::Message_type::Value::Identity_response:
+    {
+        Identity_response Authobj;
+        uint8_t val = static_cast<uint8_t> (Nas::decodeProtocolDiscriminator(data));
+        outdata.push_back(val); 
+        size = Authobj.decode(data,outdata);
+        break;
+    }    
+    break;
+   case IE::Message_type::Value::Deregistration_accept__UE_terminated_:
+    {
+        Deregistration_acpt_UE_term Authobj;
+        uint8_t val = static_cast<uint8_t> (Nas::decodeProtocolDiscriminator(data));
+        outdata.push_back(val); 
+        size = Authobj.decode(data,outdata);
+        break;
+    }    
+    break;
+   case IE::Message_type::Value::Deregistration_accept__UE_originating_:
+    {
+        Deregistration_acpt_UE_origin Authobj;
+        uint8_t val = static_cast<uint8_t> (Nas::decodeProtocolDiscriminator(data));
+        outdata.push_back(val); 
+        size = Authobj.decode(data,outdata);
+        break;
+    }    
+    break;
+   case IE::Message_type::Value::Authentication_failure:
+    {
+        Authentication_failure Authobj;
+        uint8_t val = static_cast<uint8_t> (Nas::decodeProtocolDiscriminator(data));
+        outdata.push_back(val); 
+        size = Authobj.decode(data,outdata);
+        break;
+    }    
+    break;
+   case IE::Message_type::Value::Authentication_reject:
+    {
+        Authentication_reject Authobj;
+        uint8_t val = static_cast<uint8_t> (Nas::decodeProtocolDiscriminator(data));
+        outdata.push_back(val); 
+        size = Authobj.decode(data,outdata);
+        break;
+    }    
+    break;                    
     default:
         throw NasCodecException(std::string("Not implemented: ") + IE::Message_type::value_to_string(message_type));
     }
